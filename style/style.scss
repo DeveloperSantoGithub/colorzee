@@ -1,0 +1,133 @@
+// Fonts :
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+path,
+svg,
+i {
+	pointer-events: none;
+}
+
+.colors {
+	min-height: 80vh;
+	display: flex;
+	color: rgb(212, 212, 212);
+
+	.color {
+		min-height: 80vh;
+		position: relative;
+		overflow: hidden;
+
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+
+		.controls {
+			display: flex;
+			flex-direction: column;
+
+			.adjust-Btn,
+			.lock-Btn {
+				font-size: 1.5rem;
+				margin: 2rem 0rem;
+
+				background: none;
+				border: none;
+			}
+		}
+
+		h2 {
+			font-size: 2rem;
+			cursor: pointer;
+		}
+
+		.adjustment-sliders {
+			width: 80%;
+			position: absolute;
+
+			background: rgb(255, 255, 255);
+			bottom: 0%;
+			padding: 1rem;
+
+			display: flex;
+			flex-direction: column;
+			opacity: 0;
+
+			border-top-left-radius: 1rem;
+			border-top-right-radius: 1rem;
+
+			transform: translateY(100px);
+			transition: all 0.5s ease-in-out;
+
+			button {
+				position: absolute;
+				top: 5px;
+				right: 5px;
+
+				font-size: 1.2rem;
+				color: rgb(255, 240, 240);
+
+				border: none;
+				background: none;
+
+				transition: all 0.5s ease;
+
+				&:hover {
+					color: rgb(241, 116, 100);
+				}
+			}
+		}
+	}
+}
+
+.panel {
+	min-height: 20vh;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	button {
+		margin: 1rem;
+		padding: 1rem 1.5rem;
+
+		font-size: 1.2rem;
+		color: #fff;
+		background: rgb(0, 33, 36);
+		border: none;
+		border-radius: 0.5rem;
+
+		cursor: pointer;
+		transition: all 0.3s ease;
+
+		&:hover {
+			background: rgb(166, 253, 205);
+			color: #000;
+			border-radius: 0.3rem;
+		}
+	}
+
+	p {
+		font-size: 1.2rem;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.library-panel,
+	.generate-panel,
+	.save-panel {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+}
