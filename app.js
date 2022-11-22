@@ -73,6 +73,9 @@ function randomColors() {
 		// Sliders Colorizing:
 		colorizeSliders(color, hue, brightness, saturation);
 	});
+
+	//==> Reset Input value:
+	resetInputs();
 }
 
 //==> Contrast Checker:
@@ -144,7 +147,7 @@ function hslControls(event) {
 	colorDivs[index].style.backgroundColor = color;
 }
 
-// UI text updater:
+//===> UI text updater:
 function updateTextUI(index) {
 	const activeDiv = colorDivs[index];
 	const color = chroma(activeDiv.style.backgroundColor);
@@ -160,6 +163,44 @@ function updateTextUI(index) {
 	for (icon of icons) {
 		textContrastCheck(color, icon);
 	}
+}
+
+//==> Inputs Value Reseter:
+function resetInputs() {
+	const sliders = document.querySelectorAll('.adjustment-sliders input');
+
+	sliders.forEach((slider) => {
+		// Slider pointing to the palette color:
+		//==> Hue Pointing:
+		if (slider.name === 'hue') {
+			// Create Hue Color and Value:
+			const hueColor = initialColors[slider.getAttribute('data-hue')];
+			const hueValue = chroma(hueColor).hsl()[0];
+
+			// Set value:
+			slider.value = Math.floor(hueValue);
+		}
+
+		//==> Brightness Pointing:
+		if (slider.name === 'brightness') {
+			// Create brightness Color and Value:
+			const brightColor = initialColors[slider.getAttribute('data-bright')];
+			const brightValue = chroma(brightColor).hsl()[2];
+
+			// Set value:
+			slider.value = Math.floor(brightValue * 100) / 100;
+		}
+
+		//==> Saturation Pointing:
+		if (slider.name === 'saturation') {
+			// Create saturation color and value:
+			const satColor = initialColors[slider.getAttribute('data-sat')];
+			const satValue = chroma(satColor).hsl()[1];
+
+			// Set value:
+			slider.value = Math.floor(satValue * 100) / 100;
+		}
+	});
 }
 
 //===> New Color Palette Generator:
