@@ -65,12 +65,12 @@ i {
 
 			display: flex;
 			flex-direction: column;
-			opacity: 0;
+			// opacity: 0;
 
 			border-top-left-radius: 1rem;
 			border-top-right-radius: 1rem;
 
-			transform: translateY(100px);
+			// transform: translateY(100px);
 			transition: all 0.5s ease-in-out;
 
 			button {
@@ -79,7 +79,7 @@ i {
 				right: 5px;
 
 				font-size: 1.2rem;
-				color: rgb(255, 240, 240);
+				color: rgb(24, 24, 24);
 
 				border: none;
 				background: none;
@@ -89,6 +89,23 @@ i {
 				&:hover {
 					color: rgb(241, 116, 100);
 				}
+			}
+
+			span {
+				font-size: 0.9rem;
+				font-family: 'Poppins', sans-serif;
+				color: rgb(24, 24, 24);
+			}
+
+			input[type='range'] {
+				appearance: none;
+				position: relative;
+
+				width: 100%;
+				margin: 1rem 0;
+
+				border-radius: 1rem;
+				cursor: pointer;
 			}
 		}
 	}

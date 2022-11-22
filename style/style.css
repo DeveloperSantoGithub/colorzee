@@ -84,11 +84,8 @@ i {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  opacity: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -98,7 +95,7 @@ i {
   top: 5px;
   right: 5px;
   font-size: 1.2rem;
-  color: #fff0f0;
+  color: #181818;
   border: none;
   background: none;
   -webkit-transition: all 0.5s ease;
@@ -107,6 +104,23 @@ i {
 
 .colors .color .adjustment-sliders button:hover {
   color: #f17464;
+}
+
+.colors .color .adjustment-sliders span {
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #181818;
+}
+
+.colors .color .adjustment-sliders input[type='range'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 .panel {
