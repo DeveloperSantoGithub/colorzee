@@ -16,7 +16,7 @@ const adjustmentCloseBtns = document.querySelectorAll('.close-adjustment');
 //>==> Variables:
 let initialColors;
 
-//>==> EventListners:
+//>==> EventListners start:
 
 //=> 1. Sliders Input EventListener:
 sliders.forEach((slider) => {
@@ -58,10 +58,19 @@ adjustmentCloseBtns.forEach((Btn, index) => {
 	});
 });
 
+// 7. Lock color palette:
+lockBtns.forEach((Btn, index) => {
+	Btn.addEventListener('click', (e) => {
+		lockPalette(e, index);
+	});
+});
+
 //=>  Generae random Color Btn:
 generateBtn.addEventListener('click', randomColors);
 
-//>==> Function:
+//------->> EventListners end <==<.
+
+//>==> Function start:
 //==>> Random Color and Hex Gererator Function:
 
 //=> Random Hex number Generator:
@@ -86,6 +95,7 @@ function randomColors() {
 
 	colorDivs.forEach((colorDiv, index) => {
 		const hexText = colorDiv.children[0];
+
 		const randomColor = generateHex();
 
 		// Adding it to Array:
@@ -293,8 +303,19 @@ function closeAdjustmentPanel(index) {
 }
 
 // //==> Lock color palette:
-// function lockPalette(e, index) {
+function lockPalette(e, index) {
+	const lockSVG = e.target.children[0];
+	const activeBG = colorDivs[index];
 
-// }
+	activeBG.classList.toggle('locked');
+
+	if (lockSVG.classList.contains('fa-lock-open')) {
+		e.target.innerHTML = ` <i class= "fas fa-lock"></i>`;
+	} else {
+		e.target.innerHTML = `<i class="fas fa-lock-open"></i>`;
+	}
+}
+
+// ---->> Function end <==<.
 
 randomColors();
