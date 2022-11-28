@@ -4,16 +4,21 @@ const saveBtn = document.querySelector('.save-Btn');
 const saveCloseBtn = document.querySelector('.close-savePopup-Btn');
 const saveSubmitBtn = document.querySelector('.submit-save');
 
+const libraryBtn = document.querySelector('.library-Btn');
+const libraryCloseBtn = document.querySelector('.close-libraryPopup-Btn');
+
 // Divs Selectors:
 const saveContainer = document.querySelector('.save-container');
 const saveInput = document.querySelector('.save-container input');
+
+const libraryContainer = document.querySelector('.library-container');
 
 // local Storage variables:
 let savedPalettes = [];
 
 //==> EventListener start:
 
-//===> EL for Save Buutton:
+//===> EL for Save Button:
 //=> Open Save Palette:
 saveBtn.addEventListener('click', openSavePalette);
 
@@ -22,6 +27,12 @@ saveCloseBtn.addEventListener('click', closeSavePalette);
 
 //=> Submit Save Palette:
 saveSubmitBtn.addEventListener('click', submitSavePalette);
+
+//===> El for Library:
+//=> Open Library:
+libraryBtn.addEventListener('click', openLibrary);
+
+//=> Close Library:
 
 //-------->> EventListener end <==||
 
@@ -68,9 +79,11 @@ function submitSavePalette(event) {
 	// Save to localStorage:
 	saveToLocalStorage(paletteObj);
 	saveInput.value = '';
+
+	// Generate palette for the Library:
 }
 
-//Local Storage data Saver:
+// Local Storage data Saver:
 function saveToLocalStorage(paletteObj) {
 	let localPalettes;
 
@@ -82,6 +95,22 @@ function saveToLocalStorage(paletteObj) {
 
 	localPalettes.push(paletteObj);
 	localStorage.setItem('palettes', JSON.stringify(localPalettes));
+}
+
+// Library opener:
+function openLibrary() {
+	const libraryPopup = libraryContainer.children[0];
+
+	libraryContainer.classList.add('active');
+	libraryPopup.classList.add('active');
+}
+
+// Library Closer:
+function closeLibrary() {
+	const libraryPopup = libraryContainer.children[0];
+
+	libraryContainer.classList.remove('active');
+	libraryPopup.classList.remove('active');
 }
 
 //-------->> Function end <===||
