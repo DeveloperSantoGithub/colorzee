@@ -79,7 +79,7 @@ i {
 			border-top-right-radius: 1rem;
 
 			transform: translateY(100px);
-			transition: all 0.5s ease-in-out;
+			transition: all 0.3s ease-in-out;
 
 			button {
 				position: absolute;
@@ -92,7 +92,7 @@ i {
 				border: none;
 				background: none;
 
-				transition: all 0.5s ease;
+				transition: all 0.3s ease;
 
 				&:hover {
 					color: rgb(241, 116, 100);
@@ -184,7 +184,7 @@ i {
 	pointer-events: none;
 	opacity: 0;
 
-	transition: all 0.5s ease-in-out;
+	transition: all 0.3s ease-in-out;
 
 	.copy-popup {
 		min-width: 150px;
@@ -202,7 +202,7 @@ i {
 		font-size: 1rem;
 
 		transform: translateY(-2rem) scale(1);
-		transition: transform 0.5s ease;
+		transition: transform 0.3s ease;
 
 		h4 {
 			font-size: 1.2rem;
@@ -211,8 +211,7 @@ i {
 	}
 }
 
-.save-container,
-.library-container {
+.save-container {
 	width: 100%;
 	height: 100%;
 
@@ -229,10 +228,9 @@ i {
 	pointer-events: none;
 	opacity: 0;
 
-	transition: all 0.5s ease-in-out;
+	transition: all 0.3s ease-in-out;
 
-	.save-popup,
-	.library-popup {
+	.save-popup {
 		min-width: 20vw;
 		min-height: 10vh;
 
@@ -248,7 +246,7 @@ i {
 		font-size: 1rem;
 
 		transform: translateY(-2rem) scale(1);
-		transition: transform 0.5s ease;
+		transition: transform 0.3s ease;
 
 		input.save-name {
 			width: 18rem;
@@ -296,7 +294,7 @@ i {
 			border: none;
 			background: none;
 
-			transition: all 0.5s ease;
+			transition: all 0.3s ease;
 
 			&:hover {
 				color: rgb(241, 116, 100);
@@ -305,9 +303,127 @@ i {
 	}
 }
 
+.library-container {
+	width: 100%;
+	height: 100%;
+
+	position: fixed;
+	top: 0%;
+	left: 0%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	pointer-events: none;
+	opacity: 0;
+
+	transition: all 0.3s ease-in-out;
+
+	.library-popup {
+		min-width: 30rem;
+		max-height: 30vh;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+
+		overflow-y: scroll;
+		padding: 1rem;
+		padding-left: 0;
+
+		background: #fff;
+		color: #000000;
+
+		border-radius: 1rem;
+		font-family: 'Poppins', sans-serif;
+		font-size: 1rem;
+
+		transform: translateY(-2rem) scale(0.1);
+		transition: transform 0.3s ease;
+
+		.close-libraryPopup-Btn {
+			position: absolute;
+			top: 3px;
+			right: 0px;
+
+			font-size: 1.2rem;
+			color: rgb(24, 24, 24);
+
+			border: none;
+			background: none;
+
+			transition: all 0.3s ease-in-out alternate;
+
+			&:hover {
+				color: rgb(241, 116, 100);
+			}
+		}
+
+		.custom-palette {
+			width: 100%;
+
+			padding: 1rem;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+
+			h4 {
+				flex: 1;
+				text-align: center;
+				margin: 0.5rem;
+				text-transform: uppercase;
+			}
+
+			.colors-preview {
+				display: flex;
+				flex: 1;
+
+				div {
+					height: 3rem;
+					width: 3rem;
+					margin: 0.5px;
+
+					border-radius: 50%;
+				}
+			}
+
+			.palette-picker-Btn {
+				width: 3rem;
+				height: 3rem;
+
+				border: none;
+				border-radius: 50%;
+				cursor: pointer;
+
+				margin-left: 1.5rem;
+
+				background: #000;
+				color: #fff;
+
+				font-family: 'Poppins', sans-serif;
+				font-size: 1rem;
+
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+					background: rgb(34, 235, 151);
+					color: #000;
+
+					transform: scale(0.8);
+				}
+			}
+		}
+	}
+}
+
 .copy-container.active,
 .save-container.active,
-.save-container.active {
+.library-container.active {
 	opacity: 1;
 	pointer-events: all;
 }
@@ -316,4 +432,22 @@ i {
 .save-popup.active,
 .library-popup.active {
 	transform: translateY(0rem) scale(1.2);
+}
+
+// Customize Scrollbar:
+::-webkit-scrollbar {
+	width: 0.5em;
+	height: 2em;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 100vw;
+	background: rgb(54, 54, 54);
+	margin-block: 1.8em;
+	margin-inline: 1em;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(255, 109, 24);
+	border-radius: 100vw;
 }

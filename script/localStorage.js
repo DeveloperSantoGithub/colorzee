@@ -33,6 +33,7 @@ saveSubmitBtn.addEventListener('click', submitSavePalette);
 libraryBtn.addEventListener('click', openLibrary);
 
 //=> Close Library:
+libraryCloseBtn.addEventListener('click', closeLibrary);
 
 //-------->> EventListener end <==||
 
@@ -81,6 +82,38 @@ function submitSavePalette(event) {
 	saveInput.value = '';
 
 	// Generate palette for the Library:
+	//1. Create Palette Div:
+	const palette = document.createElement('div');
+	palette.classList.add('custom-palette');
+
+	//2. Create title Div:
+	const title = document.createElement('h4');
+	title.innerText = paletteObj.name;
+
+	//3. Create palette colors preview Div:
+	const preview = document.createElement('div');
+	preview.classList.add('colors-preview');
+
+	paletteObj.colors.forEach((colorPreview) => {
+		const singleColorDiv = document.createElement('div');
+		singleColorDiv.style.backgroundColor = colorPreview;
+
+		// Append to Preview Div:
+		preview.appendChild(singleColorDiv);
+	});
+
+	//4. Create palette Picker Btn:
+	const palettePickerBtn = document.createElement('button');
+	palettePickerBtn.classList.add('palette-picker-Btn');
+	palettePickerBtn.classList.add(paletteObj.Nr);
+	palettePickerBtn.innerText = 'Pick';
+
+	//5. Append to Main Library:
+	palette.appendChild(title);
+	palette.appendChild(preview);
+	palette.appendChild(palettePickerBtn);
+
+	libraryContainer.children[0].appendChild(palette);
 }
 
 // Local Storage data Saver:
@@ -98,7 +131,8 @@ function saveToLocalStorage(paletteObj) {
 }
 
 // Library opener:
-function openLibrary() {
+function openLibrary(event) {
+	console.log('openLibrary');
 	const libraryPopup = libraryContainer.children[0];
 
 	libraryContainer.classList.add('active');
@@ -106,7 +140,7 @@ function openLibrary() {
 }
 
 // Library Closer:
-function closeLibrary() {
+function closeLibrary(event) {
 	const libraryPopup = libraryContainer.children[0];
 
 	libraryContainer.classList.remove('active');
