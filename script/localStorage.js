@@ -108,7 +108,36 @@ function submitSavePalette(event) {
 	palettePickerBtn.classList.add(paletteObj.Nr);
 	palettePickerBtn.innerText = 'Pick';
 
-	//5. Append to Main Library:
+	//5. Add EventListner to palettePickerBtn:
+	palettePickerBtn.addEventListener('click', (event) => {
+		//Close Library:
+		closeLibrary();
+
+		//Get the palette Index:
+		const paletteIndex = event.target.classList[1];
+
+		//Reset initial Colors:
+		initialColors = [];
+
+		//Get all the colors from saved Palette and looping over it:
+		savedPalettes[paletteIndex].colors.forEach((color, index) => {
+			//set Initial Colors to saved palette colors:
+			initialColors.push(color);
+
+			//Set saved colors to the colorDivs:
+			colorDivs[index].style.backgroundColor = color;
+
+			//Get Hex text nad update it:
+			const text = colorDivs[index].children[0];
+			updateTextUI(index);
+
+			//Contrast update:
+			textContrastCheck(color, text);
+		});
+		resetInputs();
+	});
+
+	//6. Append to Main Library:
 	palette.appendChild(title);
 	palette.appendChild(preview);
 	palette.appendChild(palettePickerBtn);
