@@ -156,6 +156,11 @@ i {
 				transform: rotate(90deg);
 				transition: transform 0.5s ease-in-out;
 			}
+
+			.fa-save {
+				transform: rotateY(180deg);
+				transition: transform 0.5s ease-in-out;
+			}
 		}
 	}
 
