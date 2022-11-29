@@ -72,7 +72,14 @@ function submitSavePalette(event) {
 	});
 
 	// Generate Palettes Object:
-	let paletteNr = savedPalettes.length;
+	let paletteNr;
+	const paletteObjects = JSON.parse(localStorage.getItem('palettes'));
+
+	if (paletteObjects) {
+		paletteNr = paletteObjects.length;
+	} else {
+		paletteNr = savedPalettes.length;
+	}
 
 	const paletteObj = { name, colors, Nr: paletteNr };
 	savedPalettes.push(paletteObj);
@@ -108,6 +115,12 @@ function submitSavePalette(event) {
 	palettePickerBtn.classList.add(paletteObj.Nr);
 	palettePickerBtn.innerText = 'Pick';
 
+	//Delete palette Btn:
+	const paletteDeleteBtn = document.createElement('button');
+	paletteDeleteBtn.classList.add('palette-delete-Btn');
+	paletteDeleteBtn.classList.add(paletteObj.Nr);
+	paletteDeleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+
 	//5. Add EventListner to palettePickerBtn:
 	palettePickerBtn.addEventListener('click', (event) => {
 		//Close Library:
@@ -134,13 +147,27 @@ function submitSavePalette(event) {
 			//Contrast update:
 			textContrastCheck(color, text);
 		});
+
+		//Reset all controls sliders input value:
 		resetInputs();
+	});
+
+	// Add EventListner to paletteDeleteBtn:
+	paletteDeleteBtn.addEventListener('click', (paletteObjs) => {
+		const customPaletteItem = paletteObjs.target;
+
+		const customPalette = customPaletteItem.parentElement;
+
+		removeLocalPalettes(paletteObjs);
+
+		customPalette.remove();
 	});
 
 	//6. Append to Main Library:
 	palette.appendChild(title);
 	palette.appendChild(preview);
 	palette.appendChild(palettePickerBtn);
+	palette.appendChild(paletteDeleteBtn);
 
 	libraryContainer.children[0].appendChild(palette);
 }
@@ -159,9 +186,120 @@ function saveToLocalStorage(paletteObj) {
 	localStorage.setItem('palettes', JSON.stringify(localPalettes));
 }
 
+// Local Storage data Geter:
+function getFromLocalStorage() {
+	if (localStorage.getItem('palettes') === null) {
+		localPalettes = [];
+	} else {
+		const paletteObjects = JSON.parse(localStorage.getItem('palettes'));
+
+		//savedPalettes *2:
+		savedPalettes = [...paletteObjects];
+
+		paletteObjects.forEach((paletteObj) => {
+			// Generate palette for the Library:
+			//1. Create Palette Div:
+			const palette = document.createElement('div');
+			palette.classList.add('custom-palette');
+
+			//2. Create title Div:
+			const title = document.createElement('h4');
+			title.innerText = paletteObj.name;
+
+			//3. Create palette colors preview Div:
+			const preview = document.createElement('div');
+			preview.classList.add('colors-preview');
+
+			paletteObj.colors.forEach((colorPreview) => {
+				const singleColorDiv = document.createElement('div');
+				singleColorDiv.style.backgroundColor = colorPreview;
+
+				// Append to Preview Div:
+				preview.appendChild(singleColorDiv);
+			});
+
+			//4. Create palette Picker Btn:
+			const palettePickerBtn = document.createElement('button');
+			palettePickerBtn.classList.add('palette-picker-Btn');
+			palettePickerBtn.classList.add(paletteObj.Nr);
+			palettePickerBtn.innerText = 'Pick';
+
+			//Delete palette Btn:
+			const paletteDeleteBtn = document.createElement('button');
+			paletteDeleteBtn.classList.add('palette-delete-Btn');
+			paletteDeleteBtn.classList.add(paletteObj.Nr);
+			paletteDeleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+
+			//5. Add EventListner to palettePickerBtn:
+			palettePickerBtn.addEventListener('click', (event) => {
+				//Close Library:
+				closeLibrary();
+
+				//Get the palette Index:
+				const paletteIndex = event.target.classList[1];
+
+				//Reset initial Colors:
+				initialColors = [];
+
+				//Get all the colors from saved Palette and looping over it:
+				paletteObjects[paletteIndex].colors.forEach((color, index) => {
+					//set Initial Colors to saved palette colors:
+					initialColors.push(color);
+
+					//Set saved colors to the colorDivs:
+					colorDivs[index].style.backgroundColor = color;
+
+					//Get Hex text nad update it:
+					const text = colorDivs[index].children[0];
+					updateTextUI(index);
+
+					//Contrast update:
+					textContrastCheck(color, text);
+				});
+
+				//Reset all controls sliders input value:
+				resetInputs();
+			});
+
+			// Add EventListner to paletteDeleteBtn:
+			paletteDeleteBtn.addEventListener('click', (paletteObjs) => {
+				const customPaletteItem = paletteObjs.target;
+				const customPalette = customPaletteItem.parentElement;
+
+				customPalette.remove();
+
+				removeLocalPalettes(paletteObjs);
+			});
+
+			//6. Append to Main Library:
+			palette.appendChild(title);
+			palette.appendChild(preview);
+			palette.appendChild(palettePickerBtn);
+			palette.appendChild(paletteDeleteBtn);
+
+			libraryContainer.children[0].appendChild(palette);
+		});
+	}
+}
+
+//  Local storage data Remover:
+function removeLocalPalettes(event) {
+	let localPalettes;
+
+	if (localStorage.getItem('palettes') === null) {
+		localPalettes = [];
+	} else {
+		localPalettes = JSON.parse(localStorage.getItem('palettes'));
+	}
+
+	const paletteIndex = event.target.classList[1].innerText;
+
+	localPalettes.splice(localPalettes.indexOf(paletteIndex), 1);
+	localStorage.setItem('palettes', JSON.stringify(localPalettes));
+}
+
 // Library opener:
 function openLibrary(event) {
-	console.log('openLibrary');
 	const libraryPopup = libraryContainer.children[0];
 
 	libraryContainer.classList.add('active');
@@ -177,3 +315,7 @@ function closeLibrary(event) {
 }
 
 //-------->> Function end <===||
+
+getFromLocalStorage();
+
+// localStorage.clear();

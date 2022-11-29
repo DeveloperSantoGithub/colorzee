@@ -231,14 +231,14 @@ i {
 	transition: all 0.3s ease-in-out;
 
 	.save-popup {
-		min-width: 20vw;
+		min-width: 25rem;
 		min-height: 10vh;
 
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
 
-		background: #fff;
+		background: rgba(248, 254, 255, 0.925);
 		color: #000000;
 
 		border-radius: 1rem;
@@ -248,38 +248,54 @@ i {
 		transform: translateY(-2rem) scale(1);
 		transition: transform 0.3s ease;
 
-		input.save-name {
-			width: 18rem;
-			height: 2.3rem;
-
-			border: none;
-			outline: none;
-			background: rgb(92, 92, 92);
-			color: #fff;
-			border-radius: 15px;
-
-			text-align: left;
-			padding-left: 1rem;
-			font-size: 1.1rem;
-			font-family: 'Poppins', sans-serif;
-		}
-
-		.submit-save {
-			width: 2rem;
+		.saveInputAndBtn {
+			width: 20rem;
 			height: 2rem;
 
-			background: none;
-			border: none;
-			border-radius: 50%;
+			background: #000;
+			border-radius: 15px;
 
-			font-size: 1.5rem;
-			color: rgb(0, 49, 141);
-			text-align: center;
-		}
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
 
-		h4 {
-			font-size: 1.2rem;
-			padding-bottom: 0.5rem;
+			input.save-name {
+				width: 18rem;
+				border: none;
+				outline: none;
+				background: none;
+				color: #fff;
+				// border-radius: 15px;
+
+				text-align: left;
+				padding-left: 1rem;
+				font-size: 1.1rem;
+				font-family: 'Poppins', sans-serif;
+			}
+
+			.submit-save {
+				margin: 0;
+				margin-right: 3px;
+				padding: 0;
+
+				background: none;
+				border: none;
+				border-radius: 50%;
+
+				font-size: 1.5rem;
+				color: rgb(78, 140, 255);
+				text-align: center;
+
+				transition: all 0.3s ease;
+				&:hover {
+					color: rgb(129, 255, 129);
+				}
+			}
+
+			h4 {
+				font-size: 1.2rem;
+				padding-bottom: 0.5rem;
+			}
 		}
 
 		.close-savePopup-Btn,
@@ -376,12 +392,15 @@ i {
 				flex: 1;
 				text-align: center;
 				margin: 0.5rem;
+				margin-left: 2rem;
 				text-transform: uppercase;
 			}
 
 			.colors-preview {
 				display: flex;
 				flex: 1;
+
+				margin-left: 2rem;
 
 				div {
 					height: 3rem;
@@ -412,6 +431,31 @@ i {
 
 				&:hover {
 					background: rgb(34, 235, 151);
+					color: #000;
+
+					transform: scale(0.8);
+				}
+			}
+			.palette-delete-Btn {
+				width: 3rem;
+				height: 3rem;
+
+				border: none;
+				border-radius: 50%;
+				cursor: pointer;
+
+				margin-left: 0.2rem;
+
+				background: #000;
+				color: #fff;
+
+				font-family: 'Poppins', sans-serif;
+				font-size: 1rem;
+
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+					background: rgb(255, 105, 105);
 					color: #000;
 
 					transform: scale(0.8);
