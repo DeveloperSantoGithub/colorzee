@@ -67,7 +67,7 @@ i {
 			width: 80%;
 			position: absolute;
 
-			background: rgb(255, 255, 255);
+			background: rgba(255, 255, 255, 0.85);
 			bottom: 0%;
 			padding: 1rem;
 
@@ -83,10 +83,10 @@ i {
 
 			button {
 				position: absolute;
-				top: 5px;
-				right: 5px;
+				top: 0px;
+				right: 3px;
 
-				font-size: 1.2rem;
+				font-size: 1.5rem;
 				color: rgb(24, 24, 24);
 
 				border: none;
