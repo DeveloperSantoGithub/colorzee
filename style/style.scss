@@ -132,6 +132,9 @@ i {
 	justify-content: space-evenly;
 
 	button {
+		width: 4.5rem;
+		height: 4.5rem;
+
 		margin: 1rem;
 		padding: 1rem 1.5rem;
 
@@ -139,7 +142,7 @@ i {
 		color: #fff;
 		background: rgb(0, 33, 36);
 		border: none;
-		border-radius: 0.5rem;
+		border-radius: 50%;
 
 		cursor: pointer;
 		transition: all 0.3s ease;
@@ -147,7 +150,12 @@ i {
 		&:hover {
 			background: rgb(166, 253, 205);
 			color: #000;
-			border-radius: 0.3rem;
+			border-radius: 0.5rem;
+
+			.fa-sync {
+				transform: rotate(90deg);
+				transition: transform 0.5s ease-in-out;
+			}
 		}
 	}
 

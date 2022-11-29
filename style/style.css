@@ -155,13 +155,15 @@ i {
 }
 
 .panel button {
+  width: 4.5rem;
+  height: 4.5rem;
   margin: 1rem;
   padding: 1rem 1.5rem;
   font-size: 1.2rem;
   color: #fff;
   background: #002124;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -170,7 +172,16 @@ i {
 .panel button:hover {
   background: #a6fdcd;
   color: #000;
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.panel button:hover .fa-sync {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
 
 .panel p {
