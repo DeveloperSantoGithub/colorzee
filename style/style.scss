@@ -122,6 +122,18 @@ i {
 			opacity: 1;
 		}
 	}
+
+	@media screen and (max-width: 660px) {
+		min-height: 70vh;
+
+		.color {
+			min-height: 70vh;
+
+			h2 {
+				font-size: 0.85rem;
+			}
+		}
+	}
 }
 
 .panel {

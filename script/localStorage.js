@@ -65,6 +65,7 @@ function submitSavePalette(event) {
 
 	//Create variables and set values:
 	const name = saveInput.value;
+
 	const colors = [];
 
 	currentHexs.forEach((hex) => {
@@ -153,12 +154,11 @@ function submitSavePalette(event) {
 	});
 
 	// Add EventListner to paletteDeleteBtn:
-	paletteDeleteBtn.addEventListener('click', (paletteObjs) => {
-		const customPaletteItem = paletteObjs.target;
-
+	paletteDeleteBtn.addEventListener('click', (event) => {
+		const customPaletteItem = event.target;
 		const customPalette = customPaletteItem.parentElement;
 
-		removeLocalPalettes(paletteObjs);
+		removeLocalPalettes(event);
 
 		customPalette.remove();
 	});
@@ -262,13 +262,13 @@ function getFromLocalStorage() {
 			});
 
 			// Add EventListner to paletteDeleteBtn:
-			paletteDeleteBtn.addEventListener('click', (paletteObjs) => {
-				const customPaletteItem = paletteObjs.target;
+			paletteDeleteBtn.addEventListener('click', (event) => {
+				const customPaletteItem = event.target;
 				const customPalette = customPaletteItem.parentElement;
 
 				customPalette.remove();
 
-				removeLocalPalettes(paletteObjs);
+				removeLocalPalettes(event);
 			});
 
 			//6. Append to Main Library:
@@ -292,7 +292,7 @@ function removeLocalPalettes(event) {
 		localPalettes = JSON.parse(localStorage.getItem('palettes'));
 	}
 
-	const paletteIndex = event.target.classList[1].innerText;
+	const paletteIndex = localPalettes.length;
 
 	localPalettes.splice(localPalettes.indexOf(paletteIndex), 1);
 	localStorage.setItem('palettes', JSON.stringify(localPalettes));

@@ -2,12 +2,11 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 path,
@@ -18,44 +17,23 @@ i {
 
 .colors {
   min-height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  color: #d4d4d4;
+  color: rgb(212, 212, 212);
 }
-
 .colors .color {
   min-height: 80vh;
   position: relative;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
-
 .colors .color .controls {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .colors .color .controls .adjust-Btn,
 .colors .color .controls .lock-Btn {
   font-size: 1.5rem;
@@ -63,68 +41,51 @@ i {
   background: none;
   border: none;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .colors .color .controls .adjust-Btn:hover,
 .colors .color .controls .lock-Btn:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  transform: scale(1.2);
 }
-
 .colors .color h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
 }
-
 .colors .color .adjustment-sliders {
   width: 80%;
   position: absolute;
   background: rgba(255, 255, 255, 0.85);
   bottom: 0%;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   opacity: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  -webkit-transform: translateY(100px);
-          transform: translateY(100px);
-  -webkit-transition: all 0.3s ease-in-out;
+  transform: translateY(100px);
   transition: all 0.3s ease-in-out;
 }
-
 .colors .color .adjustment-sliders button {
   position: absolute;
   top: 0px;
   right: 3px;
   font-size: 1.5rem;
-  color: #181818;
+  color: rgb(24, 24, 24);
   border: none;
   background: none;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 .colors .color .adjustment-sliders button:hover {
-  color: #f17464;
+  color: rgb(241, 116, 100);
 }
-
 .colors .color .adjustment-sliders span {
   font-size: 0.9rem;
-  font-family: 'Poppins', sans-serif;
-  color: #181818;
+  font-family: "Poppins", sans-serif;
+  color: rgb(24, 24, 24);
 }
-
-.colors .color .adjustment-sliders input[type='range'] {
+.colors .color .adjustment-sliders input[type=range] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -134,26 +95,28 @@ i {
   border-radius: 1rem;
   cursor: pointer;
 }
-
 .colors .color .adjustment-sliders.active {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
   opacity: 1;
+}
+@media screen and (max-width: 660px) {
+  .colors {
+    min-height: 70vh;
+  }
+  .colors .color {
+    min-height: 70vh;
+  }
+  .colors .color h2 {
+    font-size: 0.85rem;
+  }
 }
 
 .panel {
   min-height: 20vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
 }
-
 .panel button {
   width: 4.5rem;
   height: 4.5rem;
@@ -161,56 +124,35 @@ i {
   padding: 1rem 1.5rem;
   font-size: 1.2rem;
   color: #fff;
-  background: #002124;
+  background: rgb(0, 33, 36);
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 .panel button:hover {
-  background: #a6fdcd;
+  background: rgb(166, 253, 205);
   color: #000;
   border-radius: 0.5rem;
 }
-
 .panel button:hover .fa-sync {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
+  transform: rotate(90deg);
   transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
-
 .panel button:hover .fa-save {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  -webkit-transition: -webkit-transform 0.5s ease-in-out;
-  transition: -webkit-transform 0.5s ease-in-out;
+  transform: rotateY(180deg);
   transition: transform 0.5s ease-in-out;
-  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
 }
-
 .panel p {
   font-size: 1.2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 .panel .library-panel,
 .panel .generate-panel,
 .panel .save-panel {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
 
 .copy-container {
@@ -219,47 +161,28 @@ i {
   position: fixed;
   top: 0%;
   left: 0%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .copy-container .copy-popup {
   min-width: 150px;
   min-height: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
   background: #fff;
   color: #000000;
   border-radius: 2rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  -webkit-transform: translateY(-2rem) scale(1);
-          transform: translateY(-2rem) scale(1);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
+  transform: translateY(-2rem) scale(1);
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-
 .copy-container .copy-popup h4 {
   font-size: 1.2rem;
   padding-bottom: 0.5rem;
@@ -271,63 +194,37 @@ i {
   position: fixed;
   top: 0%;
   left: 0%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .save-container .save-popup {
   min-width: 25rem;
   min-height: 10vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
   background: rgba(248, 254, 255, 0.925);
   color: #000000;
   border-radius: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  -webkit-transform: translateY(-2rem) scale(1);
-          transform: translateY(-2rem) scale(1);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
+  transform: translateY(-2rem) scale(1);
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-
 .save-container .save-popup .saveInputAndBtn {
   width: 20rem;
   height: 2rem;
   background: #000;
   border-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .save-container .save-popup .saveInputAndBtn input.save-name {
   width: 18rem;
   border: none;
@@ -337,9 +234,8 @@ i {
   text-align: left;
   padding-left: 1rem;
   font-size: 1.1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 .save-container .save-popup .saveInputAndBtn .submit-save {
   margin: 0;
   margin-right: 3px;
@@ -348,37 +244,31 @@ i {
   border: none;
   border-radius: 50%;
   font-size: 1.5rem;
-  color: #4e8cff;
+  color: rgb(78, 140, 255);
   text-align: center;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 .save-container .save-popup .saveInputAndBtn .submit-save:hover {
-  color: #81ff81;
+  color: rgb(129, 255, 129);
 }
-
 .save-container .save-popup .saveInputAndBtn h4 {
   font-size: 1.2rem;
   padding-bottom: 0.5rem;
 }
-
 .save-container .save-popup .close-savePopup-Btn,
 .save-container .save-popup .close-libraryPopup-Btn {
   position: absolute;
   top: 0px;
   right: 3px;
   font-size: 1.2rem;
-  color: #181818;
+  color: rgb(24, 24, 24);
   border: none;
   background: none;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 .save-container .save-popup .close-savePopup-Btn:hover,
 .save-container .save-popup .close-libraryPopup-Btn:hover {
-  color: #f17464;
+  color: rgb(241, 116, 100);
 }
 
 .library-container {
@@ -387,111 +277,70 @@ i {
   position: fixed;
   top: 0%;
   left: 0%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   opacity: 0;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .library-container .library-popup {
   min-width: 30rem;
   max-height: 30vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
   overflow-y: scroll;
   padding: 1rem;
   padding-left: 0;
   background: #fff;
   color: #000000;
   border-radius: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  -webkit-transform: translateY(-2rem) scale(0.1);
-          transform: translateY(-2rem) scale(0.1);
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
+  transform: translateY(-2rem) scale(0.1);
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
-
 .library-container .library-popup .close-libraryPopup-Btn {
   position: absolute;
   top: 3px;
   right: 0px;
   font-size: 1.2rem;
-  color: #181818;
+  color: rgb(24, 24, 24);
   border: none;
   background: none;
-  -webkit-transition: all 0.3s ease-in-out alternate;
   transition: all 0.3s ease-in-out alternate;
 }
-
 .library-container .library-popup .close-libraryPopup-Btn:hover {
-  color: #f17464;
+  color: rgb(241, 116, 100);
 }
-
 .library-container .library-popup .custom-palette {
   width: 100%;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
 }
-
 .library-container .library-popup .custom-palette h4 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   text-align: center;
   margin: 0.5rem;
   margin-left: 2rem;
   text-transform: uppercase;
 }
-
 .library-container .library-popup .custom-palette .colors-preview {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   margin-left: 2rem;
 }
-
 .library-container .library-popup .custom-palette .colors-preview div {
   height: 3rem;
   width: 3rem;
   margin: 0.5px;
   border-radius: 50%;
 }
-
 .library-container .library-popup .custom-palette .palette-picker-Btn {
   width: 3rem;
   height: 3rem;
@@ -501,19 +350,15 @@ i {
   margin-left: 1.5rem;
   background: #000;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .library-container .library-popup .custom-palette .palette-picker-Btn:hover {
-  background: #22eb97;
+  background: rgb(34, 235, 151);
   color: #000;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
 }
-
 .library-container .library-popup .custom-palette .palette-delete-Btn {
   width: 3rem;
   height: 3rem;
@@ -523,17 +368,14 @@ i {
   margin-left: 0.2rem;
   background: #000;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-
 .library-container .library-popup .custom-palette .palette-delete-Btn:hover {
-  background: #ff6969;
+  background: rgb(255, 105, 105);
   color: #000;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .copy-container.active,
@@ -546,8 +388,7 @@ i {
 .copy-popup.active,
 .save-popup.active,
 .library-popup.active {
-  -webkit-transform: translateY(0rem) scale(1.2);
-          transform: translateY(0rem) scale(1.2);
+  transform: translateY(0rem) scale(1.2);
 }
 
 ::-webkit-scrollbar {
@@ -557,13 +398,12 @@ i {
 
 ::-webkit-scrollbar-track {
   border-radius: 100vw;
-  background: #363636;
+  background: rgb(54, 54, 54);
   margin-block: 1.8em;
   margin-inline: 1em;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff6d18;
+  background: rgb(255, 109, 24);
   border-radius: 100vw;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
