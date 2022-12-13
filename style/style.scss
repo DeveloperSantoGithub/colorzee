@@ -132,6 +132,10 @@ i {
 			h2 {
 				font-size: 0.85rem;
 			}
+
+			.adjustment-sliders {
+				display: none;
+			}
 		}
 	}
 }
@@ -234,6 +238,9 @@ i {
 			padding-bottom: 0.5rem;
 		}
 	}
+	// @media screen and (max-width: 660px) {
+	// 	//-->> Need to some work
+	// }
 }
 
 .save-container {

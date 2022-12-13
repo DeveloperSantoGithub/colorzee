@@ -109,6 +109,9 @@ i {
   .colors .color h2 {
     font-size: 0.85rem;
   }
+  .colors .color .adjustment-sliders {
+    display: none;
+  }
 }
 
 .panel {
