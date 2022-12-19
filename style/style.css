@@ -258,6 +258,11 @@ i {
   font-size: 1.2rem;
   padding-bottom: 0.5rem;
 }
+@media screen and (max-width: 660px) {
+  .save-container .save-popup .saveInputAndBtn {
+    width: 17rem;
+  }
+}
 .save-container .save-popup .close-savePopup-Btn,
 .save-container .save-popup .close-libraryPopup-Btn {
   position: absolute;
@@ -272,6 +277,11 @@ i {
 .save-container .save-popup .close-savePopup-Btn:hover,
 .save-container .save-popup .close-libraryPopup-Btn:hover {
   color: rgb(241, 116, 100);
+}
+@media screen and (max-width: 660px) {
+  .save-container .save-popup {
+    min-width: 20rem;
+  }
 }
 
 .library-container {
