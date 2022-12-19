@@ -47,6 +47,11 @@ i {
 .colors .color .controls .lock-Btn:hover {
   transform: scale(1.2);
 }
+@media screen and (max-width: 660px) {
+  .colors .color .controls .adjust-Btn {
+    display: none;
+  }
+}
 .colors .color h2 {
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
