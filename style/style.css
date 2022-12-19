@@ -354,6 +354,15 @@ i {
   margin: 0.5px;
   border-radius: 50%;
 }
+@media screen and (max-width: 660px) {
+  .library-container .library-popup .custom-palette .colors-preview {
+    margin-left: 0rem;
+  }
+  .library-container .library-popup .custom-palette .colors-preview div {
+    height: 2rem;
+    width: 2rem;
+  }
+}
 .library-container .library-popup .custom-palette .palette-picker-Btn {
   width: 3rem;
   height: 3rem;
@@ -389,6 +398,30 @@ i {
   background: rgb(255, 105, 105);
   color: #000;
   transform: scale(0.8);
+}
+@media screen and (max-width: 660px) {
+  .library-container .library-popup .custom-palette {
+    padding: 0.5rem;
+  }
+  .library-container .library-popup .custom-palette h4 {
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
+  }
+  .library-container .library-popup .custom-palette .palette-picker-Btn {
+    margin-left: 0.5rem;
+  }
+  .library-container .library-popup .custom-palette .palette-delete-Btn,
+.library-container .library-popup .custom-palette .palette-picker-Btn {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 660px) {
+  .library-container .library-popup {
+    min-width: 15rem;
+    max-height: 18vh;
+  }
 }
 
 .copy-container.active,

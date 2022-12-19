@@ -449,6 +449,15 @@ i {
 
 					border-radius: 50%;
 				}
+
+				@media screen and (max-width: 660px) {
+					margin-left: 0rem;
+
+					div {
+						height: 2rem;
+						width: 2rem;
+					}
+				}
 			}
 
 			.palette-picker-Btn {
@@ -501,6 +510,32 @@ i {
 					transform: scale(0.8);
 				}
 			}
+
+			@media screen and (max-width: 660px) {
+				padding: 0.5rem;
+
+				h4 {
+					margin-left: 0.5rem;
+					font-size: 0.7rem;
+				}
+
+				.palette-picker-Btn {
+					margin-left: 0.5rem;
+				}
+
+				.palette-delete-Btn,
+				.palette-picker-Btn {
+					width: 2rem;
+					height: 2rem;
+
+					font-size: 0.7rem;
+				}
+			}
+		}
+
+		@media screen and (max-width: 660px) {
+			min-width: 15rem;
+			max-height: 18vh;
 		}
 	}
 }
