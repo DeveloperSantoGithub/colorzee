@@ -17,7 +17,6 @@
 * color Adjustments panel
 * Responsive, on all devices
 * Local Storage Supported
-* Total Task Counter
 
 ## *WEBSITE DEMO*
 ## Generated:
