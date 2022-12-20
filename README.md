@@ -18,6 +18,19 @@
 * Responsive, on all devices
 * Local Storage Supported
 
+### *Tools*: 
+![JS](https://user-images.githubusercontent.com/72430572/208605713-673f9c21-caf7-4339-b28e-d1ec06ec8339.gif)
+![sass](https://user-images.githubusercontent.com/72430572/208606358-d8300af5-59b4-45fe-8c7f-4bbc9fd5039c.png)
+![html](https://user-images.githubusercontent.com/72430572/208606664-b2c0a15c-e3be-4864-953a-cb2672851d36.png)
+* Vanilla JavaScript: </br>
+
+* CSS Preprocessor: SASS </br>
+
+* HTML
+
+
+
+
 ## *WEBSITE DEMO*
 ## Generated:
 ![colorzee-1](https://user-images.githubusercontent.com/72430572/208599731-f4fb6655-d475-41ef-88e3-0f5334e4cde9.png)
