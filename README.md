@@ -2,7 +2,6 @@
 ## A super fast color palettes generator!
 # Make a Palette
 
-## Site Link:
 - [LiveSite](https://colorzee.netlify.app/)
 
 ### *Features*:
